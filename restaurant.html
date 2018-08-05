@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="data/manifest.json">
+  <meta name="theme-color" content="#2ec4cf"/>
+  <link rel="preload" as="style" href="css/style.css" onload="this.rel='stylesheet'">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/> -->
+
+  <title>Restaurant Info</title>
+
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+  <script>
+      document.createElement( "picture" );
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.3/picturefill.min.js" async></script>
+
+</head>
+
+<body>
+  <div class ="container">
+    
+      <!-- Beginning header -->
+      <header class="header">
+          <h1 class="header__title font_important">Bite of the Big Apple</h1>
+        </header>
+    <!-- Beginning breadcrumb -->
+    <br/>
+    <nav aria-label="Breadcrumb" id="breadcrumb">
+    </nav >
+
+    
+  <!-- Beginning main -->
+  <main id="maincontent" class="main__container">
+    <!-- Beginning map -->
+    <section id="map-container" class="map__container">
+      <div role="application" id="map" class="map__google"></div>
+    </section>
+<div class="results__container">
+    <!-- Beginning restaurant -->
+    <section id="restaurant-container" class="restaurants__container">
+      <h2 id="restaurant-name"></h2>
+      <img id="restaurant-img">
+      <p id="restaurant-cuisine"></p>
+      <p id="restaurant-address"></p>
+      <table id="restaurant-hours" class="restaurant__table"></table>
+    </section>
+    <!-- Beginning reviews -->
+    <section id="reviews-container" class="reviews__container">
+      <br>
+      <form class="reviews__post__container" role="form">
+            <legend>Leave a review</legend>
+            
+            <p><label for="name">Name:</label> <input type="text" required name="name" id="name"></p>
+
+            <label for="number">Rate out of 5</label>
+            <select aria-label="rate this restaurant" name ="rating" id="rating">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <p><label for="comments">Comments: </label> <input type="textarea" required name="comments" id="comments" class="comments__details"></p>
+            <button class="review__btn" onclick="addReview()">Add Review</button>
+      </form>
+      </section>
+      
+      <section id="reviews-show" class="show__reviews">
+        <ul id="reviews-list"></ul>
+      </section>
+    </div>
+  </main>
+  
+
+  <!-- Beginning footer -->
+  <footer id="footer">
+    Copyright (c) 2017 <a href="/"><strong>Bite of the Big Apple</strong></a> All Rights Reserved.
+  </footer>
+  
+</div>
+
+<script src="js/min/idb.js"></script>
+<script  src="js/min/dbhelper.js"></script>
+<script async defer src="js/min/restaurant_info.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4fUjxnco231vSDXTXw--6DPf-EAwDWyI&libraries=places&callback=initMap"></script>
+<!-- <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script> -->
+</body>
+</html>

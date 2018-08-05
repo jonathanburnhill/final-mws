@@ -1,0 +1,19 @@
+{
+    "short_name": "NY",
+    "name": "Big apple reviews",
+    "icons": [{
+        "src": "/images/icons-192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+    },
+    {
+        "src": "/images/icons-512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+    }
+    ],
+    "start_url": "http://localhost:8080",
+    "background_color": "#2ec4cf",
+    "display": "fullscreen",
+    "theme_color": "#2ec4cf"
+}
